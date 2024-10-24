@@ -39,7 +39,7 @@ def save_webhook_data(data, request_type):
     
     return filename
 
-@application.route('/')
+@app.route('/')
 def home():
     """Home route to confirm server is running"""
     return """
@@ -47,7 +47,7 @@ def home():
     <p>Send POST requests to /webhook endpoint</p>
     """
 
-@application.route('/webhook', methods=['POST', 'PUT', 'GET'])
+@app.route('/webhook', methods=['POST', 'PUT', 'GET'])
 def webhook():
     try:
         request_data = {}
