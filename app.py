@@ -9,7 +9,7 @@ from datetime import datetime
 import os
 from werkzeug.utils import secure_filename
 
-application = Flask(__name__)  # Changed from app to application for AWS compatibility
+app = Flask(__name__)  # Changed from app to application for AWS compatibility
 
 # Configure logging
 logging.basicConfig(
@@ -104,4 +104,4 @@ def webhook():
 
 if __name__ == '__main__':
     port = int(environ.get('PORT', 5000))
-    application.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port)
